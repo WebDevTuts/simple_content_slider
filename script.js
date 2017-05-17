@@ -22,6 +22,16 @@ if (slideCount > 0) {
   for (i = 0; i < slideCount; i++) {
     slides[i].classList.add('animated');
   }
+
+  // Add an event listener for next button
+  document.getElementById('next').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    if (cursor < slideCount - 1) {
+      moveSlides('forward');
+      cursor++;
+    }
+  });
 }
 
 // Declare a function that calculates the tallest slide
