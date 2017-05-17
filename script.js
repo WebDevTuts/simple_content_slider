@@ -42,6 +42,24 @@ if (slideCount > 0) {
       cursor--;
     }
   });
+
+  // Add event listener for window resize
+  window.addEventListener('resize', function() {
+    // Get the new slide width
+    slideWidth = slides[0].offsetWidth;
+
+    // Recalculate the left position of the slides
+    for (i = 0; i < slides.length; i++) {
+      if (i <= cursor) {
+        slides[i].style.left = "-" + slideWidth * (cursor -i) + "px";
+      } else if (i > cursor) {
+        slides[i].style.left = slideWidth * (i - cursor) + "px";
+      }
+    }
+
+    // Recalculate the height of the tallest slide
+    calculateTallestSlide();
+  });
 }
 
 // Declare a function that calculates the tallest slide
