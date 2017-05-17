@@ -54,3 +54,14 @@ function calculateTallestSlide() {
 
   slider.style.height = topHeight + "px";
 }
+
+// Declare a function that will change the slide position
+function moveSlides(direction) {
+  for (var j = 0; j < slides.length; j++) {
+    if (direction == "backward") {
+      slides[j].style.left = +slides[j].style.left.replace(/[^-\d\.]/g, '') + slideWidth + "px";
+    } else if (direction == "forward") {
+      slides[j].style.left = +slides[j].style.left.replace(/[^-\d\.]/g, '') - slideWidth + "px";
+    }
+  }
+}
