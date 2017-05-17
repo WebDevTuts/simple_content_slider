@@ -17,6 +17,11 @@ if (slideCount > 0) {
 
   // Calculate tallest slide
   calculateTallestSlide();
+
+  // Add the animated class to each slide
+  for (i = 0; i < slideCount; i++) {
+    slides[i].classList.add('animated');
+  }
 }
 
 // Declare a function that calculates the tallest slide
