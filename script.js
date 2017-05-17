@@ -14,4 +14,18 @@ if (slideCount > 0) {
   for (var i = 0; i < slideCount; i++) {
     slides[i].style.left = slideWidth * i + "px";
   }
+
+  // Calculate tallest slide
+  calculateTallestSlide();
+}
+
+// Declare a function that calculates the tallest slide
+function calculateTallestSlide() {
+  for (var i = 0; i < slideCount; i++) {
+    if (slides[i].offsetHeight > topHeight) {
+      topHeight = slides[i].offsetHeight;
+    }
+  }
+
+  slider.style.height = topHeight + "px";
 }
