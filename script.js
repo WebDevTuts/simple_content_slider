@@ -32,6 +32,16 @@ if (slideCount > 0) {
       cursor++;
     }
   });
+
+  // Add an event listener for previous button
+  document.getElementById('prev').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    if (cursor > 0) {
+      moveSlides('backward');
+      cursor--;
+    }
+  });
 }
 
 // Declare a function that calculates the tallest slide
